@@ -2,7 +2,14 @@
 
 **FOR AUTHORIZED SECURITY RESEARCH ONLY.**
 
-A minimalist C++/ASM framework for rapid multi-architecture Windows PoC development and system state visualization.
+A minimalist C++/ASM framework for rapid multi-architecture Windows PoC development with folder-isolated payload targets.
+
+## Payload Targets
+Projects are isolated by folder to prevent logic leakage between delivery formats:
+- **`src/exe/`**: Standalone research executable.
+- **`src/dll/`**: Payload DLL (Pure `DllMain` logic).
+- **`src/loader/`**: Minimal `LoadLibrary` utility to test DLL payloads.
+- **`src/common/`**: Shared utilities and hardware-abstraction logic.
 
 ## Logging / Stack / Memory
 - `LOG_MEM(comp, addr, sz, name)`: Memory region hex dump with boxed header.
@@ -23,8 +30,8 @@ A minimalist C++/ASM framework for rapid multi-architecture Windows PoC developm
 
 | Task | Command | Optional Flags |
 | :--- | :--- | :--- |
-| **Build** | `make build` | `NAME=poc ARCH=x64\|x86 CONFIG=Debug\|Release` |
-| **Run** | `make run` | `ARCH=x64 CONFIG=Debug` |
+| **Build** | `make build` | `TYPE=exe\|dll\|loader NAME=poc ARCH=x64\|x86 CONFIG=Debug\|Release` |
+| **Run** | `make run` | `TYPE=exe\|loader ARCH=x64 CONFIG=Debug` |
 | **Clean** | `make clean` | — |
 
 *Note: Ninja generator is used to provide `compile_commands.json` in the root for LSP synchronization.*
