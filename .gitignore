@@ -25,3 +25,6 @@ Makefile
 !Makefile # Keep the management Makefile
 !CMakeLists.txt
 compile_commands.json
+
+# clangd
+.cache/
