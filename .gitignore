@@ -1,0 +1,27 @@
+# Windows Research Build Artifacts
+build/
+bin/
+*.exe
+*.pdb
+*.ilk
+*.obj
+*.lib
+
+# MSVC / IDE Artifacts
+.vs/
+*.sln
+*.vcxproj
+*.user
+*.filters
+.idea/
+.vscode/
+
+# Build System
+CMakeCache.txt
+CMakeFiles/
+CMakeSettings.json
+cmake_install.cmake
+Makefile
+!Makefile # Keep the management Makefile
+!CMakeLists.txt
+compile_commands.json
