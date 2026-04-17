@@ -21,7 +21,6 @@ CMakeCache.txt
 CMakeFiles/
 CMakeSettings.json
 cmake_install.cmake
-Makefile
 !Makefile # Keep the management Makefile
 !CMakeLists.txt
 compile_commands.json

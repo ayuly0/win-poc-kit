@@ -1,5 +1,7 @@
 cmake_minimum_required(VERSION 3.15)
 
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
 # ─── Project Configuration ───
 if(NOT POC_NAME)
     set(POC_NAME "poc")
@@ -80,6 +82,3 @@ if(CMAKE_SIZEOF_VOID_P EQUAL 4)
         LIBRARY_OUTPUT_DIRECTORY_RELEASE "${CMAKE_CURRENT_SOURCE_DIR}/bin/Win32/Release"
     )
 endif()
-
-# Enable compile_commands.json for the current target type
-set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
